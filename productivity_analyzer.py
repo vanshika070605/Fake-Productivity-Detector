@@ -23,3 +23,10 @@ data = df.groupby("Category")["Time_Minutes"].sum()
 plt.pie(data, labels=data.index, autopct="%1.1f%%")
 plt.title("Productivity Analysis")
 plt.show()
+
+focus_score = ((productive_time / total_time) * 100) + 10
+
+if focus_score > 100:
+    focus_score = 100
+
+print("Focus Score:", round(focus_score, 2), "%")
