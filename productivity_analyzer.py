@@ -5,8 +5,10 @@ df = pd.read_csv("activity.csv")
 total_time = df["Time_Minutes"].sum()
 
 productive_time = df[df["Category"] == "Productive"]["Time_Minutes"].sum()
-
-score = (productive_time / total_time) * 100
+if total_time == 0:
+    score = 0
+else:
+    score = (productive_time / total_time) * 100
 
 print("Productivity Score:", round(score, 2), "%")
 
