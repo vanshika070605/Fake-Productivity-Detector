@@ -39,3 +39,6 @@ if focus_score > 100:
     focus_score = 100
 
 print("Focus Score:", round(focus_score, 2), "%")
+distraction_time = df[df["Category"] == "distracting"]["Time_Minutes"].sum()
+distraction_score = (distraction_time / total_time) * 100
+print("Distraction Score:", round(distraction_score, 2), "%")
