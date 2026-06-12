@@ -16,3 +16,10 @@ elif score >= 50:
     print("Moderately Productive")
 else:
     print("Fake Productivity Detected")
+import matplotlib.pyplot as plt
+
+data = df.groupby("Category")["Time_Minutes"].sum()
+
+plt.pie(data, labels=data.index, autopct="%1.1f%%")
+plt.title("Productivity Analysis")
+plt.show()
